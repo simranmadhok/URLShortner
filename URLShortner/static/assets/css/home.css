@@ -1,0 +1,14 @@
+/* CSS Styling for home.html */
+
+body, html {
+    height: 100%;
+    margin: 5;
+}
+
+#outer-con {
+    background-image: url("../../assets/img/bg-pic.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

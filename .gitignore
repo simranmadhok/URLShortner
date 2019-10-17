@@ -1,0 +1,6 @@
+urls_venv/
+db.sqlite3
+.coverage
+manage.py
+.vscode/
+htmlcov/
