@@ -2,16 +2,16 @@
 
 A Django RESTful API based url shortner application consisting of two majot API endpoints:
 
-# API Endpoint I) POST Request: urlshortner/mini/
+##### API Endpoint I) POST Request: urlshortner/mini/
 
 EG: Request body: {"url": "https://www.xyz.com"}  
 
-# API Endpoint II) GET Request: urlshortner/<miniURL>
+##### API Endpoint II) GET Request: urlshortner/<miniURL>
 
 EG: Parameter argument: urlshortner/1Ulee
      
 
-# Application Workflow
+#### Application Workflow
 
 1. User invokes API Endpoint I, request redirected to MiniURLView.
 2. Insert a record ie. Original URL into SQLite database
@@ -22,25 +22,43 @@ EG: Parameter argument: urlshortner/1Ulee
 7. Extract URL (passed as an argument) and pass it into decode_func(miniURL) wherein, python int(url, 8) function re-generates the ref_id value
 8. Fetch the ref_id -> Fetch the Original URL (associated with it) -> Simple Redirect to Website
 
-# Development 
+#### Development 
 
 POSTMAN API Tool to create request body and receive response from API endpoints created
 
-# Testing
+#### Testing
 
 MiniURLTestCase(APITestCase) and RedirectURLTestCase(APITestCase) test classes developed and tested successfully.
 
 Python Coverage test tool utilized. Code coverage achieved: 97%.
 
-# Setup and Installation
+#### Setup and Installation
 
-1. Create virtual environment
+1. Create and activate virtual environment
+```python
+# step 1
+py -m venv my_venv
+# step 2
+source my_venv/bin/activate
+```
 2. Run requirements.txt file (install Python packages as req.)
+```python
+py -m pip install -r requirements.txt
+```
 3. Make database migrations
+```python
+# step 1
+py manage.py migrate
+# step 2
+py manage.py makemigrations
+```
 4. Execute API endpoints using POSTMAN tool
-5. Test API endoints with the command: manage.py test URLShortner.tests
+5. Test API endoints with the command: 
+```python
+py manage.py test URLShortner.tests
+```
 
-# Deployment
+#### Deployment
 
 Since URL Shortner is a small Django application, it would be suitable to deploy it on Free-of-cost platforms eg. Heroku
 
